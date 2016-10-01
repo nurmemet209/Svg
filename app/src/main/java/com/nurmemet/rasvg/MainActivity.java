@@ -8,14 +8,22 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
     ImageView refreshAnim;
+    ImageView pathAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        refreshAnim= (ImageView) findViewById(R.id.vector_anim_view);
-        AnimatedVectorDrawable anim= (AnimatedVectorDrawable) refreshAnim.getDrawable();
+        refreshAnim = (ImageView) findViewById(R.id.vector_anim_view);
+        AnimatedVectorDrawable anim = (AnimatedVectorDrawable) refreshAnim.getDrawable();
         anim.start();
+
+
+        pathAnim = (ImageView) findViewById(R.id.test);
+        WidowsStartAnim an = new WidowsStartAnim();
+        pathAnim.setBackground(an);
+        an.startAnim();
+
     }
 }
